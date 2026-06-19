@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-light: #f7fff7;
+  --color-brand-sky: #6d9dc5;
+  --color-brand-teal: #156064;
+  --color-brand-navy: #243b4a;
+  --color-brand-black: #000000;
+
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --background: #f7fff7; /* Off-White base */
+  --foreground: #243b4a; /* Secondary Base Text */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  /* Generous tracking and line-height of 1.8 for data-density scanning */
+  letter-spacing: 0.025em;
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
