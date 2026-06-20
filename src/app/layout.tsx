@@ -8,14 +8,13 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Enterprise IT Systems & Advanced Infrastructure Automation | COLTECH",
-  description: "Circle of Life (COLTECH) engineers premium custom software, industrial pump ERP automation loops, secure network environments, and AI-enabled surveillance solutions.",
+  title: "Enterprise IT & Infrastructure Automation | COLTECH",
+  description: "COLTECH engineers premium custom software, industrial automation loops, secure network environments, and AI surveillance solutions.",
   openGraph: {
-    title: "Enterprise IT Systems & Advanced Infrastructure Automation | COLTECH",
-    description: "Circle of Life (COLTECH) engineers premium custom software, industrial pump ERP automation loops, secure network environments, and AI-enabled surveillance solutions.",
+    title: "Enterprise IT & Infrastructure Automation | COLTECH",
+    description: "COLTECH engineers premium custom software, industrial automation loops, secure network environments, and AI surveillance solutions.",
+    images: ["/capsule-bg.png"],
     url: "https://coltech.co",
-    siteName: "COLTECH",
-    locale: "en_US",
     type: "website",
   },
   alternates: {
