@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Layers, Database, CodeSquare } from "lucide-react";
+import DeploymentLifecycle from "@/components/ui/DeploymentLifecycle";
 
 export default function SoftwarePage() {
   return (
@@ -57,47 +58,16 @@ export default function SoftwarePage() {
               <div className="p-4 bg-brand-teal/10 rounded-sm mb-6 border border-brand-teal/20 group-hover:border-brand-sky/50 transition-colors">
                 <item.icon className="w-8 h-8 text-brand-sky" strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">{item.title}</h3>
+              <h2 className="text-2xl font-bold text-white mb-4 tracking-wide">{item.title}</h2>
               <p className="text-brand-light/70 leading-relaxed text-base">{item.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Timeline Visualization */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="bg-[#1D303D] border border-brand-teal/20 p-12 md:p-20 relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-teal/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-          
-          <h2 className="text-white text-3xl font-bold mb-16 tracking-tight">Deployment Lifecycle</h2>
-          
-          <div className="flex flex-col gap-12 relative">
-            {/* Timeline Line */}
-            <div className="absolute left-[15px] top-2 bottom-2 w-[2px] bg-brand-sky/20 hidden md:block"></div>
-            
-            {[
-              { step: "01", name: "Architecture Planning", details: "Mapping dependencies and tech stack." },
-              { step: "02", name: "System Engineering", details: "Core logic and API construction." },
-              { step: "03", name: "Deployment & Optimization", details: "Containerized push and scaling." },
-              { step: "04", name: "Continuous Monitoring", details: "Real-time health telemetry." },
-            ].map((phase, i) => (
-              <div key={i} className="flex gap-8 relative z-10">
-                <div className="hidden md:flex flex-col items-center">
-                  <div className="w-8 h-8 rounded-full bg-brand-teal border-4 border-[#1D303D] flex items-center justify-center text-white text-xs font-bold shadow-lg">
-                    {phase.step}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-white text-xl font-bold mb-2">{phase.name}</h4>
-                  <p className="text-brand-light/70 text-base">{phase.details}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Dynamic Deployment Lifecycle SVG Tracing */}
+        <div className="mt-8 -mx-6">
+          <DeploymentLifecycle />
+        </div>
 
       </div>
     </div>

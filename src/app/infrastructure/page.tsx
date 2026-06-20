@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Server, ShieldAlert, Network, HardDrive } from "lucide-react";
+import HardwareIntegrationMap from "@/components/ui/HardwareIntegrationMap";
 
 export default function InfrastructurePage() {
   return (
@@ -62,7 +63,7 @@ export default function InfrastructurePage() {
               <div className="p-4 bg-brand-teal/10 rounded-sm mb-6 border border-brand-teal/20 group-hover:border-brand-sky/50 transition-colors">
                 <item.icon className="w-8 h-8 text-brand-sky" strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 tracking-wide">{item.title}</h3>
+              <h2 className="text-2xl font-bold text-white mb-3 tracking-wide">{item.title}</h2>
               <p className="text-brand-light/70 leading-relaxed text-base">{item.details}</p>
             </motion.div>
           ))}
@@ -94,6 +95,11 @@ export default function InfrastructurePage() {
             </div>
           </div>
         </motion.div>
+
+        {/* Dynamic Hardware Integration SVG Tracing */}
+        <div className="mt-8 -mx-6">
+          <HardwareIntegrationMap />
+        </div>
 
       </div>
     </div>

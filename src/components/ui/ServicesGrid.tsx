@@ -99,11 +99,10 @@ export default function ServicesGrid() {
               variants={cardVariants}
               onClick={() => router.push(service.href)}
               whileHover={{
-                y: -12,
-                boxShadow: "0 25px 50px -12px rgba(36, 59, 74, 0.15)",
-                transition: { type: "spring", stiffness: 300, damping: 20 },
+                scale: 1.02,
+                transition: { type: "spring", stiffness: 400, damping: 25 },
               }}
-              className="group bg-white p-8 border border-brand-navy/10 flex flex-col items-start rounded-sm cursor-pointer"
+              className="group bg-white p-8 border border-brand-navy/10 hover:border-brand-teal transition-all duration-300 flex flex-col items-start rounded-none cursor-pointer"
             >
               <div className="mb-6 p-3 bg-brand-light rounded-sm inline-block">
                 <service.icon
