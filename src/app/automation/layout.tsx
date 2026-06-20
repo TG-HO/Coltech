@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Software & Intelligent ERP | COLTECH",
-  description: "Automated pipeline compilation, cross-platform mobile environments, and dedicated custom enterprise systems.",
+  title: "Industrial Automation & IoT | COLTECH",
+  description: "Seamless SCADA integration, automated wetstock telemetry, and AI-driven workflow architectures.",
 };
 
-export default function SoftwareLayout({
+export default function AutomationLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -18,12 +18,12 @@ export default function SoftwareLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Custom Enterprise Software & ERP",
+            "name": "Industrial Automation & IoT",
             "provider": {
               "@type": "Organization",
               "name": "COLTECH"
             },
-            "description": "Automated pipeline compilation, cross-platform mobile environments, and dedicated custom enterprise systems."
+            "description": "Seamless SCADA integration, automated wetstock telemetry, and AI-driven workflow architectures."
           })
         }}
       />

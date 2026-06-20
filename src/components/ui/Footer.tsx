@@ -50,10 +50,10 @@ export default function Footer() {
               Company
             </h4>
             <Link
-              href="/core-values"
+              href="/about"
               className="text-sm opacity-80 hover:text-brand-sky hover:opacity-100 transition-colors"
             >
-              Core Values
+              About Us
             </Link>
             <Link
               href="/vision-mission"

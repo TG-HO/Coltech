@@ -10,5 +10,24 @@ export default function InfrastructureLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Managed IT Systems & Security Architectures",
+            "provider": {
+              "@type": "Organization",
+              "name": "COLTECH"
+            },
+            "description": "High-performance physical layer networking, structural server configuration, and continuous network health assessments."
+          })
+        }}
+      />
+      {children}
+    </>
+  );
 }
