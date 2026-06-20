@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://coltech.co";
+  const baseUrl = "https://coltechs.netlify.app";
 
   const routes = [
     "",
