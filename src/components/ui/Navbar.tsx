@@ -90,7 +90,7 @@ export default function Navbar() {
               className="bg-brand-teal text-white flex items-center justify-center p-2 rounded md:px-6 md:py-2.5 shadow-md hover:bg-brand-navy transition-colors duration-300"
             >
               <Headset className="w-5 h-5 md:hidden" />
-              <span className="hidden md:inline font-bold tracking-wide text-sm">Contact Engineering</span>
+              <span className="hidden md:inline font-bold tracking-wide text-sm">Contact</span>
             </motion.button>
             
             <button 

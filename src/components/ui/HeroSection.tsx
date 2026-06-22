@@ -86,7 +86,7 @@ export default function HeroSection() {
       >
         {/* Kicker */}
         <motion.span variants={itemVariants} className="text-brand-sky font-bold tracking-[0.2em] text-sm md:text-base mb-6 uppercase flex items-center gap-4">
-          <span className="w-12 h-[2px] bg-brand-sky inline-block"></span>
+          {/* <span className="w-12 h-[2px] bg-brand-sky inline-block"></span> */}
           Enterprise IT & Infrastructure Automation
         </motion.span>
 
