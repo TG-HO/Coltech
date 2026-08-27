@@ -91,8 +91,7 @@ export default function HeroSection() {
         >
           <span className="w-2.5 h-2.5 rounded-full bg-[#1CB08F] animate-pulse shadow-[0_0_8px_#1CB08F]"></span>
           <span className="text-[#1CB08F] font-bold tracking-[0.25em] text-xs md:text-sm uppercase drop-shadow-sm">
-            BEYOND THE DIGITAL <span className="text-white/40 font-normal mx-1">//</span> ENTERPRISE IT & AUTOMATION
-          </span>
+            BEYOND THE DIGITAL</span>
         </motion.div>
 
         {/* H1 Headline */}
