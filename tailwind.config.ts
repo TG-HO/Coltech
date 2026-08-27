@@ -1,0 +1,28 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          navy: "#152F52",
+          turquoise: "#1CB08F",
+          light: "#F8FAFC",
+          black: "#0F172A",
+        },
+      },
+      fontFamily: {
+        sans: ["var(--font-montserrat)", "Montserrat", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "Montserrat", "sans-serif"],
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;

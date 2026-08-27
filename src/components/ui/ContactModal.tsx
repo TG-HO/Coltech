@@ -39,11 +39,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
     setIsSubmitting(true);
 
-    // Simulate API delay (to be replaced with Nodemailer route later)
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Simulate API submission delay
+    await new Promise((resolve) => setTimeout(resolve, 1200));
 
     setIsSubmitting(false);
-    toast.success("Message received. Our engineering team will contact you shortly.");
+    toast.success("Inquiry received. A senior systems engineer will contact you shortly.");
     
     // Reset and close
     setFormData({ name: "", email: "", company: "", message: "" });
@@ -60,7 +60,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-brand-navy/60 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-brand-navy/70 backdrop-blur-xs z-[100]"
           />
 
           {/* Modal Container */}
@@ -73,27 +73,33 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           >
             {/* Header */}
             <div className="p-8 pb-6 border-b border-brand-navy/10 flex items-center justify-between bg-brand-light">
-              <h3 className="text-2xl font-bold text-brand-black tracking-tight">
-                Initiate Project
-              </h3>
+              <div>
+                <span className="text-brand-turquoise font-semibold tracking-[0.2em] text-xs uppercase block mb-1">
+                  Connect With Engineers
+                </span>
+                <h3 className="text-2xl font-bold text-brand-navy tracking-tight">
+                  Initiate Project
+                </h3>
+              </div>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-brand-navy/5 rounded-full transition-colors group"
+                className="p-2 hover:bg-brand-navy/5 rounded-full transition-colors group cursor-pointer"
+                aria-label="Close Modal"
               >
-                <X className="w-6 h-6 text-brand-navy group-hover:text-brand-teal transition-colors" />
+                <X className="w-6 h-6 text-brand-navy group-hover:text-brand-turquoise transition-colors" />
               </button>
             </div>
 
-            {/* Form */}
+            {/* Form Body */}
             <div className="p-8 flex-1 flex flex-col">
-              <p className="text-brand-navy mb-8 opacity-90 leading-relaxed">
-                Connect with our engineering architects to discuss custom enterprise software, automation infrastructure, or deployment timelines.
+              <p className="text-brand-navy/80 text-sm leading-relaxed mb-8">
+                Consult directly with our engineering architects regarding enterprise software, IoT pump telemetry, or network security infrastructure.
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-bold text-brand-black tracking-wide uppercase">
-                    Full Name <span className="text-red-500">*</span>
+                  <label htmlFor="name" className="text-xs font-bold text-brand-navy tracking-wider uppercase">
+                    Full Name <span className="text-brand-turquoise">*</span>
                   </label>
                   <input
                     type="text"
@@ -101,14 +107,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-brand-navy/20 py-3 bg-transparent text-brand-black focus:outline-none focus:border-brand-teal transition-colors rounded-none placeholder:text-brand-navy/30"
-                    placeholder="John Doe"
+                    className="w-full border-b-2 border-brand-navy/15 py-2.5 bg-transparent text-brand-navy focus:outline-none focus:border-brand-turquoise transition-colors rounded-none placeholder:text-brand-navy/30 text-sm"
+                    placeholder="Enter your name"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-bold text-brand-black tracking-wide uppercase">
-                    Corporate Email <span className="text-red-500">*</span>
+                  <label htmlFor="email" className="text-xs font-bold text-brand-navy tracking-wider uppercase">
+                    Corporate Email <span className="text-brand-turquoise">*</span>
                   </label>
                   <input
                     type="email"
@@ -116,13 +122,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-brand-navy/20 py-3 bg-transparent text-brand-black focus:outline-none focus:border-brand-teal transition-colors rounded-none placeholder:text-brand-navy/30"
-                    placeholder="john@company.com"
+                    className="w-full border-b-2 border-brand-navy/15 py-2.5 bg-transparent text-brand-navy focus:outline-none focus:border-brand-turquoise transition-colors rounded-none placeholder:text-brand-navy/30 text-sm"
+                    placeholder="name@company.com"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="company" className="text-sm font-bold text-brand-black tracking-wide uppercase">
+                  <label htmlFor="company" className="text-xs font-bold text-brand-navy tracking-wider uppercase">
                     Company / Organization
                   </label>
                   <input
@@ -131,14 +137,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-brand-navy/20 py-3 bg-transparent text-brand-black focus:outline-none focus:border-brand-teal transition-colors rounded-none placeholder:text-brand-navy/30"
-                    placeholder="Acme Corp"
+                    className="w-full border-b-2 border-brand-navy/15 py-2.5 bg-transparent text-brand-navy focus:outline-none focus:border-brand-turquoise transition-colors rounded-none placeholder:text-brand-navy/30 text-sm"
+                    placeholder="Acme Industrial Corp"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2 flex-1">
-                  <label htmlFor="message" className="text-sm font-bold text-brand-black tracking-wide uppercase">
-                    Project Scope <span className="text-red-500">*</span>
+                  <label htmlFor="message" className="text-xs font-bold text-brand-navy tracking-wider uppercase">
+                    Project Scope <span className="text-brand-turquoise">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -146,8 +152,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full border-b-2 border-brand-navy/20 py-3 bg-transparent text-brand-black focus:outline-none focus:border-brand-teal transition-colors resize-none rounded-none placeholder:text-brand-navy/30"
-                    placeholder="Briefly describe your requirements..."
+                    className="w-full border-b-2 border-brand-navy/15 py-2.5 bg-transparent text-brand-navy focus:outline-none focus:border-brand-turquoise transition-colors resize-none rounded-none placeholder:text-brand-navy/30 text-sm"
+                    placeholder="Briefly outline your deployment timeline and requirements..."
                   ></textarea>
                 </div>
 
@@ -156,19 +162,19 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-brand-teal text-white py-4 font-bold text-lg tracking-wide hover:bg-brand-navy transition-colors duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full bg-brand-turquoise text-white py-4 font-bold text-sm tracking-wider uppercase hover:bg-brand-navy hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
                       <>
-                        Submit Request
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        Submit Deployment Request
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </>
                     )}
                   </button>
-                  <p className="text-xs text-brand-navy/60 text-center mt-4 uppercase tracking-widest">
-                    Secured via 256-bit SSL
+                  <p className="text-[11px] text-brand-navy/50 text-center mt-4 uppercase tracking-widest font-mono">
+                    Secured via 256-bit SSL Encryption
                   </p>
                 </div>
               </form>

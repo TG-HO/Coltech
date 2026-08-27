@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://coltech.co"),
   title: "Enterprise IT & Infrastructure Automation | COLTECH",
   description: "COLTECH engineers premium custom software, industrial automation loops, secure network environments, and AI surveillance solutions.",
+  icons: {
+    icon: "/Col Logo.svg",
+    shortcut: "/favicon.ico",
+    apple: "/Col Logo.svg",
+  },
   openGraph: {
     title: "Enterprise IT & Infrastructure Automation | COLTECH",
     description: "COLTECH engineers premium custom software, industrial automation loops, secure network environments, and AI surveillance solutions.",
@@ -28,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${montserrat.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -40,6 +51,7 @@ export default function RootLayout({
               "alternateName": "Circle of Life",
               "url": "https://coltech.co",
               "foundingDate": "2024",
+              "logo": "https://coltech.co/Col Logo.svg",
               "knowsAbout": [
                 "Enterprise Software Development",
                 "Point of Sale POS Architectures",
@@ -53,11 +65,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-brand-light text-brand-black antialiased selection:bg-brand-teal selection:text-white overflow-x-hidden`}>
+      <body className={`${montserrat.className} font-sans bg-brand-light text-brand-navy antialiased selection:bg-brand-turquoise selection:text-white overflow-x-hidden min-h-screen flex flex-col`}>
         <Navbar />
         {children}
         <Footer />
-        <Toaster position="bottom-right" richColors theme="dark" />
+        <Toaster position="bottom-right" richColors theme="light" />
       </body>
     </html>
   );

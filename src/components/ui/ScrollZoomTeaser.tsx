@@ -19,8 +19,6 @@ export default function ScrollZoomTeaser() {
   });
 
   // Use clip-path inset to reveal the full-res image instead of CSS scaling.
-  // This completely eliminates blurriness since the image renders at native resolution.
-  // We go from a small pill shape in the center, to a full screen rectangle.
   const clipPath = useTransform(
     smoothProgress, 
     [0, 0.8], 
@@ -32,10 +30,10 @@ export default function ScrollZoomTeaser() {
 
   // Fade in the final overlay text once the image covers the screen
   const overlayTextOpacity = useTransform(smoothProgress, [0.7, 0.9], [0, 1]);
-  const overlayTextY = useTransform(smoothProgress, [0.7, 0.9], [50, 0]);
+  const overlayTextY = useTransform(smoothProgress, [0.7, 0.9], [40, 0]);
 
   // Ensure the image darkness increases as it gets larger so white text is readable
-  const overlayDarkness = useTransform(smoothProgress, [0, 0.8], [0.3, 0.75]);
+  const overlayDarkness = useTransform(smoothProgress, [0, 0.8], [0.35, 0.8]);
 
   return (
     <section ref={containerRef} className="h-[150vh] relative bg-brand-light">
@@ -43,19 +41,19 @@ export default function ScrollZoomTeaser() {
         
         {/* Flanking Text Container */}
         <motion.div
-          className="absolute inset-0 flex items-center justify-center gap-[40vw] z-10 pointer-events-none"
+          className="absolute inset-0 flex items-center justify-center gap-[38vw] z-10 pointer-events-none"
         >
           <motion.h2 
             style={{ opacity: initialTextOpacity }}
-            className="text-3xl md:text-5xl lg:text-7xl font-bold text-brand-black tracking-tighter whitespace-nowrap"
+            className="text-3xl md:text-5xl lg:text-7xl font-bold text-brand-navy tracking-tight whitespace-nowrap"
           >
             We are
           </motion.h2>
           <motion.h2 
             style={{ opacity: initialTextOpacity }}
-            className="text-3xl md:text-5xl lg:text-7xl font-bold text-brand-black tracking-tighter whitespace-nowrap"
+            className="text-3xl md:text-5xl lg:text-7xl font-bold text-brand-navy tracking-tight whitespace-nowrap"
           >
-            COLTECH
+            COL<span className="text-brand-turquoise">TECH</span>
           </motion.h2>
         </motion.div>
         
@@ -66,13 +64,13 @@ export default function ScrollZoomTeaser() {
         >
           <Image
             src="/capsule-bg.png"
-            alt="High density server room"
+            alt="High density enterprise server room"
             fill
             className="object-cover object-center"
             priority
             quality={100}
           />
-          {/* Dynamic dark mask to ensure perfect readability of the final text */}
+          {/* Dynamic Deep Navy mask */}
           <motion.div 
             style={{ opacity: overlayDarkness }}
             className="absolute inset-0 bg-brand-navy mix-blend-multiply" 
@@ -85,9 +83,12 @@ export default function ScrollZoomTeaser() {
           className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
         >
           <div className="max-w-4xl px-6 text-center">
-            <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight drop-shadow-2xl">
-              Automating systems for industry giants like{" "}
-              <span className="text-brand-sky">Taj Gasoline</span>.
+            <span className="text-brand-turquoise font-semibold tracking-[0.25em] text-xs md:text-sm uppercase block mb-4">
+              Proven Enterprise Track Record
+            </span>
+            <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight drop-shadow-2xl">
+              Automating mission-critical systems for industry giants like{" "}
+              <span className="text-brand-turquoise font-extrabold underline decoration-brand-turquoise decoration-2 underline-offset-8">Taj Gasoline</span>.
             </h3>
           </div>
         </motion.div>

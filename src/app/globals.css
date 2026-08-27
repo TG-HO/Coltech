@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-light: #f7fff7;
-  --color-brand-sky: #6d9dc5;
-  --color-brand-teal: #156064;
-  --color-brand-navy: #243b4a;
-  --color-brand-black: #000000;
+  --color-brand-navy: #152f52;
+  --color-brand-turquoise: #1cb08f;
+  --color-brand-light: #f8fafc;
+  --color-brand-black: #0f172a;
 
-  --font-sans: var(--font-inter);
+  /* Legacy color aliases mapped directly to the new brand tokens */
+  --color-brand-teal: #1cb08f;
+  --color-brand-sky: #1cb08f;
+
+  --font-sans: var(--font-montserrat), "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-montserrat: var(--font-montserrat), "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer utilities {
+  .text-brand-turquoise {
+    color: #1cb08f !important;
+  }
+  .bg-brand-turquoise {
+    background-color: #1cb08f !important;
+  }
+  .border-brand-turquoise {
+    border-color: #1cb08f !important;
+  }
+  .text-brand-navy {
+    color: #152f52 !important;
+  }
+  .bg-brand-navy {
+    background-color: #152f52 !important;
+  }
+  .border-brand-navy {
+    border-color: #152f52 !important;
+  }
 }
 
 :root {
-  --background: #f7fff7; /* Off-White base */
-  --foreground: #243b4a; /* Secondary Base Text */
+  --background: #ffffff;
+  --foreground: #152f52;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  /* Generous tracking and line-height of 1.8 for data-density scanning */
-  letter-spacing: 0.025em;
-  line-height: 1.8;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  letter-spacing: 0.015em;
+  line-height: 1.75;
 }
 
 h1,
@@ -29,7 +54,15 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.2;
+}
+
+/* Tagline uppercase tracked styling */
+.brand-tagline {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
