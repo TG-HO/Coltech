@@ -17,8 +17,10 @@ export const metadata: Metadata = {
   title: "Enterprise IT & Infrastructure Automation | COLTECH",
   description: "COLTECH engineers premium custom software, industrial automation loops, secure network environments, and AI surveillance solutions.",
   icons: {
-    icon: "/Col Logo.svg",
-    shortcut: "/favicon.ico",
+    icon: [
+      { url: "/Col Logo.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/Col Logo.svg",
     apple: "/Col Logo.svg",
   },
   openGraph: {
